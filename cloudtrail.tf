@@ -11,8 +11,12 @@ resource "aws_cloudtrail" "foobar" {
   include_global_service_events = false
 }
 
+resource "aws_s3_bucket_policy" "trail_policy" {
+  bucket = aws_s3_bucket.s3devenes.id
+  policy = data.template_file.cloudtrial_policy.rendered
+}
+
 resource "aws_s3_bucket" "s3devenes" {
   bucket        = "devenescloudbucket"
   force_destroy = true
-  policy        = data.template_file.cloudtrial_policy.rendered
 }
