@@ -1,4 +1,6 @@
-# AWS CloudTrail with Terraform
+[![Terraform Infrastructure Plan](https://github.com/devenes/cloudtrail-terraform-s3/actions/workflows/tf_plan.yml/badge.svg)](https://github.com/devenes/cloudtrail-terraform-s3/actions/workflows/tf_plan.yml) [![Terraform Deployment](https://github.com/devenes/cloudtrail-terraform-s3/actions/workflows/tf_deploy.yml/badge.svg)](https://github.com/devenes/cloudtrail-terraform-s3/actions/workflows/tf_deploy.yml)
+
+# Automate AWS CloudTrail Deployment for S3 Bucket with Terraform
 
 ## Terraform Failed to Render Error
 
