@@ -4,12 +4,12 @@ on:
   workflow_dispatch:
 
   push:
-    branches: ["*"]
+    branches: ["release, destroy"]
     paths:
       - "*/**"
 
   pull_request:
-    branches: ["*"]
+    branches: ["release, destroy"]
 
 defaults:
   run:
@@ -49,7 +49,7 @@ jobs:
         run: terraform plan -input=false -no-color
 
       - name: Terraform Apply
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/release'
         id: apply
         run: terraform apply -auto-approve -input=false
 
