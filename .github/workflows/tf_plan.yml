@@ -15,6 +15,10 @@ jobs:
       AWS_REGION: ${{ secrets.AWS_REGION }}
 
     steps:
+      - name: Add mask
+        run: |
+          echo "::add-mask::{{data.aws_caller_identity.current.account_id}}" >> .github/workflows/terraform.yml
+
       - name: Checkout
         uses: actions/checkout@v2
 
